@@ -1,0 +1,17 @@
+// with jQuery 
+$(document).ready(function(){ /* ... */ });
+
+// shorter jQuery version 
+$(function(){ /* ... */ });
+
+// without jQuery (doesn't work in older IEs)
+document.addEventListener('DOMContentLoaded', function(){ 
+    // your code goes here
+}, false);
+
+// and here's the trick (works everywhere)
+function r(f){/in/.test(document.readyState)?setTimeout('r('+f+')',9):f()}
+// use like
+r(function(){
+    alert('DOM Ready!');
+});
